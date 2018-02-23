@@ -26,7 +26,7 @@ class Test
      */
     public function __construct()
     {
-        // Initialize
+        // 线上配置
         self::$db = new \Medoo\Medoo([
             'database_type' => 'mysql',
             'database_name' => 'openapi_localcache',
@@ -35,6 +35,14 @@ class Test
             'password' => 'tEkaFBOyCTD9'
         ]);
 
+        //本地配置
+        /*self::$db = new \Medoo\Medoo([
+            'database_type' => 'mysql',
+            'database_name' => 'openapi_localcache',
+            'server' => 'localhost',
+            'username' => 'root',
+            'password' => 'root'
+        ]);*/
 
     }
 
@@ -370,6 +378,21 @@ class Test
 
         try {
 
+
+            //取出生产环境的ip字段
+            $fpm_ips = self::$db->query('select communication_addr from openapi.shared_spo WHERE id=1')->fetchColumn();
+
+            //转为数组
+            $fpm_ips = json_decode($fpm_ips, true);
+
+            //先备份sql，用来还原用的
+            self::$db->update('tmp_shared_spo', [
+                "communication_addr[JSON]" => $fpm_ips
+            ], [
+                "id" => 1
+            ]);
+            $backup_sql = str_replace("tmp_shared_spo", "shared_spo", self::$db->last());
+
             //json格式更新操作
             $info = self::$db->update('tmp_shared_spo', [
                 "communication_addr[JSON]" => $new_arr
@@ -379,8 +402,9 @@ class Test
 
             $last_sql = str_replace("tmp_shared_spo", "shared_spo", self::$db->last());
 
+
             if ($info->rowCount()) {
-                self::$success[] = self::$error ? '' : array('success' => ' 如没有任何错误信息,请连接到openapi数据库中的shared_spo表中，执行以下sql：', 'update' => $last_sql);
+                self::$success[] = self::$error ? '' : array('success' => ' <b>没有任何错误信息,请连接到openapi数据库中的shared_spo表中，执行以下sql：</b>', 'update' =>'<b>'. $last_sql .'</b>','back'=>'<br/>如操作失败，执行以下sql来还原：','back_sql'=>$backup_sql);
             } elseif ($info->rowCount() == 0) {
                 self::$error[] = self::$error ? '' : array('error' => '没有新的数据可更新，请勿重复提交');
 //                self::$error[] = array('error' => '没有新的数据可更新，请勿重复提交', 'error_info' => self::$db->last());

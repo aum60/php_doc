@@ -1,13 +1,21 @@
 <?php
 require 'yield/medoo.php';
 
-$db = new \Medoo\Medoo([
+$db_online = new \Medoo\Medoo([
     'database_type' => 'mysql',
     'database_name' => 'openapi_localcache',
     'server' => 'rm-bp178946u0rk4ptjf.mysql.rds.aliyuncs.com',
     'username' => 'ops_new_phpfpm',
     'password' => 'tEkaFBOyCTD9'
 ]);
+
+/*$db = new \Medoo\Medoo([
+    'database_type' => 'mysql',
+    'database_name' => 'openapi_localcache',
+    'server' => 'localhost',
+    'username' => 'root',
+    'password' => 'root'
+]);*/
 
 //取出fpm的映射关系
 $data = $db->select('fpm_ip_info', [
@@ -81,12 +89,13 @@ foreach ($fpm_ips as $key => $val) {
         }
 
         #message {
-            height: 270px;
-            width: 800px;
+            min-height: 500px;
+            width: 90%;
+            margin-top: 5%;
             margin-left: auto;
             margin-right: auto;
             border: 1px solid rgba(37, 37, 37, 0.51);
-            overflow: scroll;
+            overflow: auto;
 
         }
 
