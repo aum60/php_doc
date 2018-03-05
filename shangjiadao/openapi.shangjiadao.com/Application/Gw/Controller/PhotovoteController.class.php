@@ -2,6 +2,7 @@
 namespace Gw\Controller;
 
 use Think\Log;
+use Think\Cache\Driver\Redis;
 use Gw\Controller\ActivityController;
 use Gw\Controller\CommonController;
 use Gw\Constants\ActivityConst;
