@@ -332,7 +332,7 @@ class PhotovoteController extends ActivityController
     if ($prizes['area_verify']) {
        $Ip2Region = new Ip2Region();
        $client_area_info = $Ip2Region->memorySearch($ip);
-       
+
        if ($prizes['area_name'] != $client_area_info) {
          $err = C('AREA_IS_NOT_ALLOW_VOTE');
          return new FailureResultDO($err[0], $err[1]);
@@ -345,7 +345,7 @@ class PhotovoteController extends ActivityController
     $activity_set_id = 'activity_set_' . $type . '_' . $activity_id;
     $activity_member_vote_joiner = $activity_id . '_member_vote_' . $joiner_id;
     if ($prizes['hour_vote_verify']) {
-
+      
       //检查参赛者是否存在
       $member_score_info = $Redis->zScore($activity_set_id, $activity_member_vote_joiner);
       if (!isset($member_info)) {
@@ -430,6 +430,7 @@ class PhotovoteController extends ActivityController
       }
     }
 
+    // 剩余投票数
     $left_vote = 0;
     if (!empty($voter)) {
       $p_vote_count = $voter['vote_count'] + 1;
