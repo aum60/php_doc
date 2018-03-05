@@ -326,13 +326,18 @@ class PhotovoteController extends ActivityController
 
     //客户端ip处理
     $ip = get_client_ip(1, true);
-    $Ip2Region = new Ip2Region();
-    $client_area_info = $Ip2Region->memorySearch($ip);
+  
 
     //是否在投票区域内
-    if ($prizes['area_verify'] && ($prizes['area_name'] != $client_area_info)) {
-      $err = C('AREA_IS_NOT_ALLOW_VOTE');
-      return new FailureResultDO($err[0], $err[1]);
+    if ($prizes['area_verify']) {
+       $Ip2Region = new Ip2Region();
+       $client_area_info = $Ip2Region->memorySearch($ip);
+       
+       if ($prizes['area_name'] != $client_area_info) {
+         $err = C('AREA_IS_NOT_ALLOW_VOTE');
+         return new FailureResultDO($err[0], $err[1]);
+       }
+      
     }
 
     //每小时投票数限制
