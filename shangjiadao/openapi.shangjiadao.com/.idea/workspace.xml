@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PhotovoteController.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PhotovoteController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Gw/Controller/PhotovoteController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="236" column="0" lean-forward="true" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+            <state relative-caret-position="963">
+              <caret line="456" column="36" lean-forward="true" selection-start-line="456" selection-start-column="36" selection-end-line="456" selection-end-column="36" />
               <folding>
                 <element signature="e#33#47#0#PHP" expanded="true" />
               </folding>
@@ -26,18 +26,18 @@
       <file leaf-file-name="Ip2Region.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Gw/Logic/Ip2Region.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+            <state relative-caret-position="735">
+              <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityController.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ActivityController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Gw/Controller/ActivityController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="24" column="40" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="40" />
+            <state relative-caret-position="-2800">
+              <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -74,9 +74,9 @@
         <option value="$PROJECT_DIR$/ThinkPHP/Common/functions.php" />
         <option value="$PROJECT_DIR$/Application/Gw/Logic/Redis.class.php" />
         <option value="$PROJECT_DIR$/Application/Gw/Logic/RedisCache.class.php" />
-        <option value="$PROJECT_DIR$/Application/Gw/Logic/Ip2Region.class.php" />
         <option value="$PROJECT_DIR$/Application/Gw/Controller/PhotovoteController.class.php" />
         <option value="$PROJECT_DIR$/Application/Gw/Controller/ActivityController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Gw/Logic/Ip2Region.class.php" />
       </list>
     </option>
   </component>
@@ -198,12 +198,12 @@
       <option name="presentableId" value="Default" />
       <updated>1520260939096</updated>
       <workItem from="1520260940368" duration="44449000" />
-      <workItem from="1520390014167" duration="4849000" />
+      <workItem from="1520390014167" duration="5082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49298000" />
+    <option name="totallyTimeSpent" value="49531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -345,29 +345,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Gw/Controller/ActivityController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="24" column="40" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Gw/Logic/Ip2Region.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+        <state relative-caret-position="735">
+          <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Gw/Controller/PhotovoteController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="236" column="0" lean-forward="true" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+        <state relative-caret-position="963">
+          <caret line="456" column="36" lean-forward="true" selection-start-line="456" selection-start-column="36" selection-end-line="456" selection-end-column="36" />
           <folding>
             <element signature="e#33#47#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Gw/Controller/ActivityController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2800">
+          <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>

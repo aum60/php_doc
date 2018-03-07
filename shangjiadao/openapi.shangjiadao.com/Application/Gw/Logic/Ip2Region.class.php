@@ -46,7 +46,7 @@ class Ip2Region
     {
         $this->dbFile = __DIR__ . DIRECTORY_SEPARATOR . 'ip2region.db';
         $this->redisObj = RedisCache::getInstance(C('REDIS_HOST'), C('REDIS_PORT'), C('REDIS_AUTH'));
-        $this->dbBinStr = json_decode($this->redisObj->get($this->dbFileName));
+        $this->dbBinStr = unserialize($this->redisObj->get($this->dbFileName));
     }
 
     /**
@@ -63,7 +63,7 @@ class Ip2Region
             if ($this->dbBinStr == false) {
                 throw new Exception("Fail to read the ip_db info {$this->dbFile}");
             } else {
-                $this->redisObj->set($this->dbFileName, json_encode($this->dbBinStr));
+                $this->redisObj->set($this->dbFileName, serialize($this->dbBinStr));
             }
 
             $this->firstIndexPtr = self::getLong($this->dbBinStr, 0);
