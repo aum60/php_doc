@@ -24,7 +24,7 @@ class ActivityController extends CommonController
     // 获取活动ID
     $cache_key = "activity_joiner_cache_{$joiner_id}";
     $cache_time = 3600*24;
-    if(!($joiner = S($cache_key))) { 
+    if(!($joiner = S($cache_key))) {
       $joiner = M('Joiners')->where(['id' => $joiner_id])->field('activity_id,status')->find();
 
       if (empty($joiner)) {
@@ -41,6 +41,7 @@ class ActivityController extends CommonController
 
     // 获取活动信息
     $activity_info = self::getActivityInfoById($joiner['activity_id']);
+//    $activity_info = self::getActivityInfoById($joiner['activity_id'], true);
 
     return $activity_info;
   }
