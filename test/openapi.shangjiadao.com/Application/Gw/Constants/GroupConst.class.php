@@ -1,0 +1,11 @@
+<?php
+namespace Gw\Constants;
+
+class GroupConst
+{
+  // 团状态：有效
+  const STATUS_VALID = 1;
+
+  // 团状态：无效
+  const STATUS_INVALID = 0;
+}
