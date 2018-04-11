@@ -459,7 +459,9 @@ return array(
   'IP_IS_NOT_RIGHT'  => array(4002, 'ip address is not righit'),
   'HAS_ALREADY_REACH_HOUR_VOTE_LIMIT'  => array(4003, 'already reach hour vote limit'),
   'ACTIVITY_MEMBER_IS_NOT_EXIST'  => array(4004, 'activity member is not exist'),
-  
+  'JOINER_MEMBER_IS_NOT_VERIFY'  => array(4005, 'joiner member is not verify '),
+
 );
+
 
 
