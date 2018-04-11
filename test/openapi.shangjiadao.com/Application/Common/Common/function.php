@@ -117,3 +117,18 @@ function get_wxpay_notify_url_by_srvname($target) {
 
     return $url.'/api/wxpay_notify/'.$lib_name."/".$target;
 }
+
+
+/**
+ * 加密openid 
+ * @param string $openid
+ * @return string encryption 
+ * */ 
+function encrypt_check_openid($openid, $encryption) {
+    $return = false;
+    $prefix = 'sjdecopenid';
+    $crypt = new \Org\Crypt();
+    list($dec_result, $decryption) = $crypt->decrypt($encryption);
+    if ($dec_result && $decryption == $prefix.$openid) $return = true;
+    return $return;
+}

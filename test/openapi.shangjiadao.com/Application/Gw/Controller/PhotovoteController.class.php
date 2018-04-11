@@ -29,12 +29,13 @@ class PhotovoteController extends ActivityController
      * @params code
      * @params code
      */
-    public function vote($activity_id, $joiner_id, $open_id, $code, $avator, $nickname)
+    public function vote($activity_id, $joiner_id, $open_id, $code, $avator, $nickname, $sjd_openid)
     {
         // 获取投票信息
         $open_id = trim($open_id);
         $code = trim($code);
-
+        if (!empty($sjd_openid))  return new FailureResultDO(1007, 'sjd openid invalid');
+        $this->_encryptcheck($open_id, $sjd_openid);
         // if (strlen($open_id) != 28 && substr($open_id, 0, 2) != 'op') {
         //   $err = C('OPEN_ID_IS_INVALID');
         //   return new FailureResultDO($err[0], $err[1]);
@@ -227,12 +228,13 @@ class PhotovoteController extends ActivityController
      * @param    [type]     $nickname    [微信昵称]
      * @return   [type]                  [description]
      */
-    public function newvote($activity_id, $joiner_id, $open_id, $code, $avator, $nickname)
+    public function newvote($activity_id, $joiner_id, $open_id, $code, $avator, $nickname, $sjd_openid)
     {
         // 获取投票信息
         $open_id = trim($open_id);
         $code = trim($code);
-
+        if (!empty($sjd_openid))  return new FailureResultDO(1007, 'sjd openid invalid');
+        $this->_encryptcheck($open_id, $sjd_openid);
         //Log::record('[gw-vote-log]'.$joiner_id);
 
         // 获取活动信息

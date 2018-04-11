@@ -206,5 +206,15 @@ class ActivityController extends CommonController
     
       return $activity_info;
   }
+
+   /**
+   * 验证码验证
+   */
+  protected function _encryptcheck($open_id, $sjd_openid) {
+    if (!encrypt_check_openid($open_id, $sjd_openid)) {
+      return new FailureResultDO(1008, 'sjd openid check invalid');
+      
+    }
+  }
 }
 
